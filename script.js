@@ -17,8 +17,10 @@ context.strokeStyle = '#bfbfbf';
 var logo = new Image();
 logo.src = 'image.png';
 logo.onload = function () {
-	context.drawImage(logo, 0, 0, 450, 450);
-	drawChessBoard();
+	context.drawImage(logo, 0, 0, 450, 450);	
+}
+window.onload=function(){
+ drawChessBoard();
 }
 //画棋盘
 var drawChessBoard = function () {
