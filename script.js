@@ -2,7 +2,7 @@ var chess = document.getElementById('chess');
 var context = chess.getContext('2d');
 var me = true;
 var over = false;
-
+context.strokeStyle = '#bfbfbf';
 //初始化棋子都未落子
 var chessBoard = [];
 for (var i = 0; i < 15; i++) {
@@ -11,16 +11,14 @@ for (var i = 0; i < 15; i++) {
 		chessBoard[i][j] = 0;
 	}
 }
-
 //水印图片
-context.strokeStyle = '#bfbfbf';
 var logo = new Image();
 logo.src = 'image.png';
 logo.onload = function () {
 	context.drawImage(logo, 0, 0, 450, 450);	
 }
 window.onload=function(){
- drawChessBoard();
+drawChessBoard();
 }
 //画棋盘
 var drawChessBoard = function () {
