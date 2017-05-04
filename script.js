@@ -116,21 +116,21 @@ chess.onclick = function (e) {
 	if (chessBoard[i][j] == 0) {
 		oneStep(i, j, me);
 		chessBoard[i][j] = 1;
-	}
-	//判断我方是否赢棋
-	for (var k = 0; k < count; k++) {
-		if (wins[i][j][k]) {
-			myWin[k]++;
-			computerWin[k] = 6;
-			if (myWin[k] == 5) {
-				window.alert("你赢了！");
-				over = true;
+		//判断我方是否赢棋
+		for (var k = 0; k < count; k++) {
+			if (wins[i][j][k]) {
+				myWin[k]++;
+				computerWin[k] = 6;
+				if (myWin[k] == 5) {
+					window.alert("你赢了！");
+					over = true;
+				}
 			}
 		}
-	}
-	if (!over) {
-		me = !me;
-		computerAI();
+		if (!over) {
+			me = !me;
+			computerAI();
+		}
 	}
 }
 //计算机落子 根据得分来判断在哪里落子
@@ -215,7 +215,7 @@ var computerAI = function () {
 			myWin[k] = 6;
 			if (computerWin[k] == 5) {
 				window.alert("计算机赢了！");
-				over = true;	
+				over = true;
 			}
 		}
 	}
